@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url('https://cdn.discordapp.com/attachments/984164269249683526/1189052889172295690/Screenshot_20231226_045036_Discord.jpg?ex=659cc2cc&is=658a4dcc&hm=23d1fd25c5112a72c61902f8727cdf5e6a7d1a02dbaff2d6f71fb80d21e7b0cc');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+        }
+
+        #title {
+            font-size: 2em;
+            color: white;
+            background-color: black;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        #downloadButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #infoBox {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: auto;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #infoTitle {
+            font-size: 1.5em;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        #infoText {
+            color: black;
+        }
+
+        #moreButton {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            height: 100vh;
+            width: 250px;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: 0.3s;
+            z-index: 1;
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+
+        #creditsButton {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #creditsGUI {
+            position: fixed;
+            bottom: -300px;
+            left: 0;
+            height: 150px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: center;
+            padding-top: 20px;
+            transition: 0.3s;
+        }
+
+        #creditsText {
+            color: white;
+        }
+
+        #closeButton {
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+    <title>Alysse Executor Website</title>
+</head>
+<body>
+    <div id="title">Alysse Executor Website</div>
+    
+    <!-- Your content goes here -->
+
+    <button id="downloadButton" onclick="window.location.href='https://www.mediafire.com/file/264x8104a7ds0xd/compiled_Alysse.apk/file'">Download</button>
+
+    <div id="infoBox">
+        <div id="infoTitle">Info</div>
+        <div id="infoText">Hello Alysse is a keyless free mobile executor</div>
+    </div>
+
+    <button id="moreButton" onclick="toggleSidebar()">More</button>
+
+    <div id="sidebar">
+        <button id="creditsButton" onclick="toggleCredits()">Credits</button>
+    </div>
+
+    <div id="creditsGUI">
+        <button id="closeButton" onclick="toggleCredits()">X</button>
+        <div id="creditsText">
+            <p>Nathan Owner</p>
+            <p>Akjn47 Web Dev</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.style.left = sidebar.style.left === '0px' ? '-250px' : '0px';
+        }
+
+        function toggleCredits() {
+            var creditsGUI = document.getElementById('creditsGUI');
+            creditsGUI.style.bottom = creditsGUI.style.bottom === '0px' ? '-300px' : '0px';
+            creditsGUI.style.display = creditsGUI.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</body>
+</html>
